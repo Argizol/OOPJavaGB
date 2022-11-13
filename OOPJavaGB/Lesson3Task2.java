@@ -16,9 +16,8 @@ public class Lesson3Task2 implements Iterable<Integer>{
 	}
 
 	public int Get(int num){
-		Iterator<Integer> iterator = new MyIterator();
-		while (nums.iterator().hasNext()){
-			return iterator().next();
+		for(int num1 : nums){
+			if(num1 == num) return num;
 		}
 		return -1;
 	}
