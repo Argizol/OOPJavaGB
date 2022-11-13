@@ -31,7 +31,7 @@ public class Humans extends Human implements DoChild {
 	}
 
 	@Override
-	public void DoChild(Humans parent2, Map<Integer, ArrayList<Humans>> genealogicTree){
+	public void DoChild(Humans parent2, GenealogicTree<Child> genealogicTree){
 
 
 		if (!doMarrie(this, parent2)){
@@ -39,9 +39,10 @@ public class Humans extends Human implements DoChild {
 		}
 		String childName  = getChildName(this,parent2);
 		String surname = this.getSurname();
+		Humans mother =  (this.getGender() == "Female") ? this : parent2;
+		Humans father = (this.getGender() == "Male") ? this : parent2;
 
-		var child = new Child(childName, surname, Human.Gender.Male,
-				 (this.getGender() == "Female") ? this : parent2, (this.getGender() == "Male") ? this : parent2 );
+		var child = new Child(childName, surname, Human.Gender.Male,mother ,father);
 		Child.childs.add(child);
 	}
 
@@ -92,19 +93,15 @@ public class Humans extends Human implements DoChild {
 		return firstPart + secondPart;
 	}
 
-	public static void findAndPrintTreeByID(){
+	public static void PrintTreeByID(){
 
 		int id = getIdForSearch();
-		String father = null;
-		String mother = null;
 
 		for (int i = 0; i < Child.childs.size(); i++) {
-
+			if (id - 1 == i){
+				System.out.println(Child.childs.get(i));
+			}
 		}
-
-
-		System.out.println(mother + "\n" + father + "\n"  + "Дети: \n" + (id));
-
 	}
 
 	private static int getIdForSearch(){
