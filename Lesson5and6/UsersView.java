@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class UsersView implements View{
 
-	Scanner sc;
-	UsersDB usersDB;
-	View view;
+	private Scanner sc;
+	private UsersDB usersDB;
+	private View view;
 
 	public UsersView(UsersDB usersDB) {
 		this.usersDB = usersDB;

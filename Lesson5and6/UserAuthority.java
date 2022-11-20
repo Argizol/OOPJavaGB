@@ -3,7 +3,7 @@ package Lesson5and6;
 import java.util.Map;
 
 public  class UserAuthority implements Authority{
-	View view;
+	private View view;
 
 	public UserAuthority(View view) {
 		this.view = view;

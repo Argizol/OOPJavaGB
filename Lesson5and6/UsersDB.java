@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UsersDB {
-	Map<String, String> usersDB;
+	private Map<String, String> usersDB;
 
 	public UsersDB() {
 		usersDB = new HashMap<>();
