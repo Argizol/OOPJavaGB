@@ -5,9 +5,9 @@ public class Main {
 		boolean can_work = false;
 		UsersDB usersDB = new UsersDB();
 		View view = new UsersView(usersDB);
-		UserAuthority userAuthority = new UserAuthority(view);
+		UserAuthority userAuthority = new UserAuthority(view, usersDB);
 		while (!can_work){
-		 can_work = userAuthority.check(view.getLogin(), view.getPassword(), usersDB.getUsersDB());
+		 can_work = userAuthority.check();
 		}
 		view.printAll(usersDB);
 
