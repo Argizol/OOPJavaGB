@@ -7,7 +7,7 @@ public class Main {
 
 //		Task1
 		int[] arr = {123, 455, 214, 831, 10, 22};
-//		Lesson3Task1.PrintResult(Lesson3Task1.MySort(arr));
+		Lesson3Task1.PrintResult(Lesson3Task1.MySort(arr));
 
 
 //		Task2
