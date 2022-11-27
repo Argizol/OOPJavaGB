@@ -27,16 +27,16 @@ public class Main {
 		}
 	}
 
-	static void getArithmeticExeption(){
+	static int getArithmeticExeption() {
 		int a = 10;
 		int b = 0;
-		try{
-			int result = a/b;
-		}
-		catch (ArithmeticException e){
+		int result = 0;
+		try {
+			result = a / b;
+		} catch (ArithmeticException e) {
 			System.out.println(e.fillInStackTrace());
 		}
-
+		return result;
 	}
 	static void getNullPointerException(){
 		String str =  null;
