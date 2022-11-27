@@ -74,6 +74,9 @@ public class Main {
 			throw new RuntimeException("Длины массивов не равны, суммирование невозможно");
 		}
 		for(int i = 0; i < a.length; i++){
+			if(b[i] == 0){
+				throw new RuntimeException("b = " +b[i] + " Деление на ноль невозможно");
+			}
 			result[i] = a[i] / b[i];
 		}
 		return result;
