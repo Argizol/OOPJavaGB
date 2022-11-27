@@ -15,12 +15,12 @@ public  class UserAuthority implements Authority{
 
 		boolean bool = false;
 		String login = view.getLogin();
-		String password = view.getPassword();
 
 		if(!usersDB.getUsersDB().containsKey(login)){
 			view.print("Пользователь не найден");
 			return false;
 		}
+		String password = view.getPassword();
 
 		for(String user : usersDB.getUsersDB().keySet()){
 			if(user.equals(login)){
@@ -29,7 +29,7 @@ public  class UserAuthority implements Authority{
 					bool =  true;
 				} else {
 					view.print("Ошибка авторизации");
-					bool = false;
+					return false;
 				}
 			}
 		}
